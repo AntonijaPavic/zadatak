@@ -1,0 +1,90 @@
+body {
+    background: #ffffff;
+    color: #333333;
+    margin-top: 5rem;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #050000;
+  }
+  #objave{
+    color: #000000;
+  }
+  ul {
+    margin: 10;
+  }
+  #main-navigation {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+  }
+  h1{
+    color: #fff;
+  }
+
+  #main-navigation a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    margin-left: 1rem;
+  }
+  
+  #main-navigation a:hover,
+  #main-navigation a:active {
+    color: #cf79f1;
+  }
+  
+  #main-navigation h1 a:hover,
+  #main-navigation h1 a:active {
+    color: rgb(0, 0, 0);
+  }
+ 
+
+
+  
+  #welcome h2 {
+    font-size: 3.5rem;
+    margin: 0 0 0 2rem;
+    color: #e4e4e4;
+    width: 10rem;
+  }
+  .image img{
+      border-radius: 20%;
+      width: 35rem;
+      margin: 4rem 1rem 1rem;
+      margin-left: 24rem;
+  }
+  #cta{
+    background-color: white;
+    padding: 7% 15%;
+}
+.article-content{
+    white-space: pre-line;
+    margin: 1rem 4rem 3rem 4rem;
+}
+.article-title{
+  color: #000000;
+  margin-left: 31rem;
+}
+#read-later{
+    margin: 2rem 0;
+  }
+  #read-later button{
+    background-color: transparent;
+    border: 3px solid #000000;
+    padding: 0.5rem 2rem;
+    font: inherit;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    margin-left: 34rem;
+  }
+ 
