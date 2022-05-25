@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'aplikacija/start.css' %}">
+
+    {% if title %}
+        <title> Blog - {{ title }}</title>
+    {% else %}
+        <title>Blog</title>
+    {% endif %}
+</head>
+<body>
+  
+  <header id="main-navigation">
+    <h1><a href="{% url "start" %}">HOME</h1></a>
+        <nav>
+            <a href="{%url "interijer"%}">Interijer</a>
+            <a href="{%url "eksterijer"%}">Eksterijer</a>
+            <a href="{%url "about_us"%}">O nama</a>
+            <a href="{% url "read-later"%}">Označeno</a>
+        </nav>
+</header>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{message.tags}}">
+                  {{message}}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+        <br>
+        <div class="col-md-4">
+      
+          <div class="content-section">
+            <br>
+            <center>
+            <h3>NOVO!</h3>
+            <p class='text-muted'>Uradi sam:
+              <ul class="list-group">
+               <center> <img class="ispod-images" src="{% static "aplikacija/images/sam.jpg"%}" alt="eksterijer"></center>
+               <a href="https://uradi-sam.rs/">VIŠE</a>
+              <center> <img class="ispod-images" src="{% static "aplikacija/images/sam2.jpg"%}" alt="eksterijer"></center>
+              <a href="https://uradi-sam.rs/">VIŠE</a>
+            <center> <img class="ispod-images" src="{% static "aplikacija/images/sam3.jpg"%}" alt="eksterijer"></center>
+            <a href="https://uradi-sam.rs/">VIŠE</a>
+            </p>
+          </center>
+          </div>
+        </div>
+      </div>
+      <br>
+      <section id="boja">
+      <section id="ispod">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2>Ideje za uređenje:</h2>
+    
+        <img class="ispod-images" src="{% static "aplikacija/images/ppp.jpg"%}" alt="interijer">         
+            </div>
+            
+            <div class="carousel-item">
+              <h2 class="testimonial-text">Ideje za uređenje:</h2>
+    
+              <img class="ispod-images" src="{% static "aplikacija/images/eksterijer.jpg"%}" alt="eksterijer">
+            </div>
+            
+          </div>
+          
+          <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        
+      </section>
+    </section>
+      <section id="cta">
+    <center>
+        <h3 class="roza">Posjeti nas na društvenim mrežama</h3>
+        <button class="download-buttom btn btn-lg btn-dark" type="button"><i class="fab fa-apple"></i>Facebook</button>
+          <button class="download-buttom btn btn-lg btn-dark" type="button"><i class="fab fa-google-play"></i>Instagram</button>
+    </center>
+      </section>
+    
+    </main>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

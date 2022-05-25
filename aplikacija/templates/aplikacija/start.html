@@ -1,0 +1,56 @@
+{% extends "aplikacija/base.html" %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+    {% for post in posts %}
+    <section class="postovi">
+        <article class="media">
+          <div class="body">
+            <a href="{% url "post-detail-page" post.slug %}">
+
+            <h2><a class="article-title" href="{% url "post-detail-page" post.slug %}">{{ post.title }}</a></h2>
+            <br>
+            <section class="slika">
+            <img src="{{post.imageName.url}}" alt="nesto">
+            </section>
+            <br>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+          <div class="article-metadata">
+            <a class="mr-4" href="{% url "about_us" %}">{{ post.author }}</a>
+            <small class="text-muted">{{ post.date_posted |date:"F d,Y"}}</small>
+          </div>
+        </article>
+      </section>
+      
+    {% endfor %}
+    {% for post in post %}
+        <li> <a href="{% url "post-detail-page" post.slug%}">{{post.title}}</a></li>
+        {% endfor %}
+<section class="linija">
+<section id="box">
+  <img class="icon" src="{% static "aplikacija/images/sofa.png"%}" alt="eksterijer">
+  <p id="naslov">UREĐENJE INTERIJERA</p>
+  <a href="{%url "interijer"%}"><p id="vise">VIŠE</p></a>
+</section>
+
+
+<section id="box2">
+  <img class="icon2" src="{% static "aplikacija/images/kuca.png"%}" alt="eksterijer">
+  <p id="naslov2">UREĐENJE EKSTERIJERA</p>
+  <a href="{%url "eksterijer"%}"> <p id="vise2">VIŠE</p></a>
+</section>
+<section id="box3">
+  <img class="icon3" src="{% static "aplikacija/images/nama.png"%}" alt="eksterijer">
+  <p id="naslov3">O NAMA</p>
+  <a href="{%url "about_us"%}"><p id="vise">VIŠE</p></a>
+</section>
+<section id="box4">
+  <img class="icon4" src="{% static "aplikacija/images/spremi.png"%}" alt="eksterijer">
+  <p id="naslov4">SPREMLJENI POSTOVI</p>
+  <a href="{%url "about_us"%}"><p id="vise">VIŠE</p></a>
+</section>
+</section>
+
+{% endblock content %}

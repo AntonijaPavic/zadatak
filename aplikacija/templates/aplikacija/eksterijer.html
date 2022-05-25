@@ -1,0 +1,42 @@
+{%extends "aplikacija/base.html"%}
+{% load static %}
+{% block title %}
+  my blog
+{% endblock title %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "start.css" %}">
+{% endblock css_files %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<center>
+    <section id="objave">
+        <h1>EKSTERIJER</h1>
+    </section>
+    <br>
+    
+      {% for post in ekst %}
+      <section class="postovi">
+          <article class="media">
+            <div class="body">
+              <h2><a class="article-title" href="{% url "post-detail-page" post.slug %}">{{ post.title }}</a></h2>
+              <br>
+              <section class="slike">
+              <img src="{{post.imageName.url}}" alt="nesto">
+              </section>
+              <br>
+              <p class="article-content">{{ post.content }}</p>
+            </div>
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted |date:"F d,Y"}}</small>
+            </div>
+          </article>
+        </section>
+      {% endfor %}
+        </center>
+{% endblock content %}
