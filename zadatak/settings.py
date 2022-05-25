@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pprojekt.urls'
+ROOT_URLCONF = 'zadatak.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pprojekt.wsgi.application'
+WSGI_APPLICATION = 'zadatak.wsgi.application'
 
 
 # Database
